@@ -3,7 +3,6 @@ import streamlit as st
 from src.ui.base_layout import style_background_dashboard, style_base_layout
 
 from src.components.header import header_dashboard
-# from src.components.footer import footer_dashboard
 from src.components.subject_card import subject_card
 from src.database.db import check_teacher_exists, create_teacher, teacher_login, get_teacher_subjects, get_attendance_for_teacher
 from src.components.dialog_create_subject import create_subject_dialog
@@ -87,9 +86,6 @@ def teacher_dashboard():
         teacher_tab_attendance_records()
 
     
-
-
-    # footer_dashboard()
 
 def teacher_tab_take_attendance():
     teacher_id = st.session_state.teacher_data['teacher_id']
@@ -189,13 +185,6 @@ def teacher_tab_take_attendance():
     with c3:
         if st.button('Use Voice Attendance', type='primary', width='stretch', icon=':material/mic:'):
             voice_attendance_dialog(selected_subject_id)
-
-
-
-
-
-
-
 
 
 
@@ -334,7 +323,6 @@ def teacher_screen_login():
         if st.button('Register Instead', type="primary", icon=':material/passkey:', width='stretch'):
             st.session_state.teacher_login_type = 'register'
 
-    # footer_dashboard()
 
 
 
